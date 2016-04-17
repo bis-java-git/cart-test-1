@@ -20,7 +20,7 @@ public class MultipleItemsShoppingBasketTest extends BaseBasketTest {
     private BigDecimal totalBasketPrice;
 
     public MultipleItemsShoppingBasketTest(final Integer numberOfItems,
-                                           final BigDecimal totalBasketPrice) {
+                                                       final BigDecimal totalBasketPrice) {
         this.numberOfItems = numberOfItems;
         this.totalBasketPrice = totalBasketPrice;
     }
@@ -30,10 +30,11 @@ public class MultipleItemsShoppingBasketTest extends BaseBasketTest {
         return asList(new Object[][]{
                 {0, ORANGE_PRICE.add(APPLE_PRICE).multiply(new BigDecimal(0))},
                 {1, ORANGE_PRICE.add(APPLE_PRICE).multiply(new BigDecimal(1))},
-                {5, ORANGE_PRICE.add(APPLE_PRICE).multiply(new BigDecimal(5))},
-                {20, ORANGE_PRICE.add(APPLE_PRICE).multiply(new BigDecimal(20))},
-                {25, ORANGE_PRICE.add(APPLE_PRICE).multiply(new BigDecimal(25))},
-                {30, ORANGE_PRICE.add(APPLE_PRICE).multiply(new BigDecimal(30))}
+                {5, new BigDecimal(280)},
+                {10, new BigDecimal(475)},
+                {20, new BigDecimal(950)},
+                {25, new BigDecimal(1205)},
+                {30, new BigDecimal(1400)}
         });
     }
 

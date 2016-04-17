@@ -13,8 +13,8 @@ public class PriceCalculationServiceImpl implements PriceCalculationService {
     private DiscountPriceRule basePriceRule = new BasePriceRule();
 
     public PriceCalculationServiceImpl() {
-        discountRuleMap.put(Product.APPLE, basePriceRule);
-        discountRuleMap.put(Product.ORANGE, basePriceRule);
+        discountRuleMap.put(Product.APPLE, new Buy1Get1FreeRule());
+        discountRuleMap.put(Product.ORANGE, new Buy3AndPayFor2Rule());
     }
 
     public DiscountPriceRule getDiscountRule(Product product) {

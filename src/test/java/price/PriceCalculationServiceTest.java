@@ -14,7 +14,7 @@ public class PriceCalculationServiceTest {
     @Test
     public void  getDiscountRuleTest() {
         assertNotNull(priceCalculationService.getDiscountRule(Product.APPLE));
-        assertThat(priceCalculationService.getDiscountRule(Product.APPLE), instanceOf(BasePriceRule.class));
-        assertThat(priceCalculationService.getDiscountRule(Product.ORANGE), instanceOf(BasePriceRule.class));
+        assertThat(priceCalculationService.getDiscountRule(Product.APPLE), instanceOf(Buy1Get1FreeRule.class));
+        assertThat(priceCalculationService.getDiscountRule(Product.ORANGE), instanceOf(Buy3AndPayFor2Rule.class));
     }
 }
