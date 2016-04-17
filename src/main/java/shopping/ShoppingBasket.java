@@ -1,17 +1,17 @@
 package shopping;
 
 import domain.Item;
+import price.PriceCalculationServiceImpl;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingBasket implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class ShoppingBasket  {
 
     private final List<BasketItem> items = new ArrayList<>();
+
+    final PriceCalculationServiceImpl priceCalculationService = new PriceCalculationServiceImpl();
 
     public void addItem(final Item item) {
         for (BasketItem basketItem : items) {
@@ -27,7 +27,7 @@ public class ShoppingBasket implements Serializable {
         BigDecimal totalBasketCost = BigDecimal.ZERO;
 
         for (BasketItem basketItem : items) {
-            totalBasketCost = totalBasketCost.add(basketItem.getTotalPrice());
+            totalBasketCost = totalBasketCost.add(priceCalculationService.getDiscountRule(basketItem.getItem().getProduct()).getTotalPrice(basketItem.getQuantity(), basketItem.getItem().getPrice()));
         }
 
         return totalBasketCost;

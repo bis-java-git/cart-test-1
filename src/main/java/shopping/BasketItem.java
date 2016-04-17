@@ -8,10 +8,10 @@ public class BasketItem {
 
     private final Item item;
 
-    private Integer quantity =1;
+    private Integer quantity = 1;
 
     public BasketItem(Item item) {
-        this.item=item;
+        this.item = item;
     }
 
     public void incrementQuantity() {
@@ -24,6 +24,10 @@ public class BasketItem {
 
     public Item getItem() {
         return item;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
     }
 
 }
