@@ -17,6 +17,12 @@ public class ShoppingBasketTest extends BaseBasketTest {
         shoppingBasket.addItem(orange);
         shoppingBasket.addItem(orange);
         assertEquals(ORANGE_PRICE.multiply(new BigDecimal(4)), shoppingBasket.calculateTotalPrice());
+
+        shoppingBasket.addItem(apple);
+        shoppingBasket.addItem(apple);
+        shoppingBasket.addItem(apple);
+        shoppingBasket.addItem(apple);
+        assertEquals(ORANGE_PRICE.multiply(new BigDecimal(4)).add(APPLE_PRICE.multiply(new BigDecimal(4))), shoppingBasket.calculateTotalPrice());
     }
 
     @Test

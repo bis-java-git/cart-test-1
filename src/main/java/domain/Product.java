@@ -1,5 +1,6 @@
 package domain;
 
 public enum Product {
-    ORANGE
+    ORANGE,
+    APPLE
 }
